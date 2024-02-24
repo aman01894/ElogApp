@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.TestingActivity">
+
+    <TextView
+        android:id="@+id/on_duty_time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10dp"
+        android:text="0"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/on_duty_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="On Duty Timer Start" />
+
+
+
+
+    <TextView
+        android:id="@+id/drive_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10dp"
+        android:text="0"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/drive_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drive Timer Start" />
+
+
+    <TextView
+        android:id="@+id/sleep_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10dp"
+        android:text="0"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/sleep_clock_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SLEEP Timer Start" />
+
+    <Button
+        android:id="@+id/off_duty_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Off Duty" android:layout_marginTop="@dimen/_10dp"/>
+
+
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESET" android:layout_marginTop="@dimen/_30dp"/>
+
+
+    <Button
+        android:id="@+id/newDutyStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="START New DUTY" android:layout_marginTop="@dimen/_30dp"/>
+
+
+
+
+    <TextView
+        android:id="@+id/duty_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10dp"
+        android:text=""
+        android:textSize="28sp" />
+
+</LinearLayout>

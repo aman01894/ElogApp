@@ -1,0 +1,3 @@
+include ':app', ':pt-sdk-release'
+rootProject.name = "ElogApp"
+include ':choosephotohelper'

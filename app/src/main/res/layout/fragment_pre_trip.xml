@@ -1,0 +1,139 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="preDvirViewModel"
+            type="com.example.elogapp.activity.ui.dvir_pretrip.DvirPreTripViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/vehicle_selection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:background="@color/Blue_700"
+            android:orientation="vertical"
+            android:padding="@dimen/_5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:padding="@dimen/_10dp"
+                android:text="@string/dvir"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_30sp" />
+
+            <TextView
+                android:id="@+id/ic_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:drawableEnd="@drawable/ic_add_24"
+                android:drawablePadding="@dimen/_10dp"
+                android:paddingTop="@dimen/_10dp"
+                android:text="@string/ic_new"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ic_new"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:drawableEnd="@drawable/ic_mark_email_read"
+                android:drawablePadding="@dimen/_10dp"
+                android:text="@string/email"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dvir_history_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vehicle_selection_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:drawableEnd="@drawable/ic_mark_email_read"
+            android:drawablePadding="@dimen/_10dp"
+            android:text="@string/dvir__history_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sp" />
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/newdvirBtn"
+            android:layout_below="@+id/dvir_history_text"
+            android:layout_margin="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/Blue_700">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@color/white">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_pre_trip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/newdvirBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/backBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:background="@drawable/rectangle_bg"
+            android:text="New DVIR" />
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:onClick="@{preDvirViewModel::onBackPressedBtn}"
+            android:background="@drawable/rectangle_bg"
+            android:text="BACK" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+</layout>

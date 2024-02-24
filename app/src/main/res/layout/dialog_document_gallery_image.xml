@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="20dp"
+    app:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Document"
+            android:textColor="@color/black"
+            android:textSize="@dimen/material_size_16" />
+
+        <ImageView
+            android:id="@+id/imgImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/spinnerLayout"
+            android:layout_below="@+id/dialogTitle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10dp" />
+
+        <RelativeLayout
+            android:id="@+id/spinnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_above="@+id/btnUploadLay"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/rect_round_bg">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinnerDocType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:background="@null"
+                android:drawSelectorOnTop="true"
+                android:entries="@array/doc_type"
+                android:paddingStart="5dp"
+                android:popupTheme="@style/mySpinnerItemStyle"
+                android:spinnerMode="dropdown">
+
+            </androidx.appcompat.widget.AppCompatSpinner>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnUploadLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dip"
+            android:gravity="center_horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpload"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="35dip"
+                android:background="@drawable/rect_bg_blue"
+                android:gravity="center"
+                android:text="Upload"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

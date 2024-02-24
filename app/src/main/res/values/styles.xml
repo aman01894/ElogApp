@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    <!-- AlertDialog text color fix thanks to Shawn Castrianni, see: http://groups.google.com/group/android-developers/browse_thread/thread/f0b34621d3a70c4b -->
+    <style name="DialogLight" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/whitegrey</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DeviceDisplayLabel">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DeviceDisplayValue">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="DisplayLabel">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DisplayValue">
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+    </style>
+
+    <style name="DeviceSelectionItemName">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DeviceSelectionItemValue">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Widget"/>
+
+    <style name="Widget.ListTitle">
+        <item name="android:background">@color/headerBackgroundColor</item>
+        <item name="android:textColor">@color/headerTextColor</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.ScannerSubtitle">
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="button_blue_header_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/custom_btn_white</item>
+        <item name="android:padding">@dimen/_5dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dvir_txt_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:padding">@dimen/_5dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="common_button">
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:background">@drawable/custom_btn</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
+    <style name="load_text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginEnd">@dimen/_2dp</item>
+        <item name="android:layout_marginStart">@dimen/_2dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="payment_text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/BlackText</item>
+        <item name="android:layout_marginTop">@dimen/_5dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="load_accept_text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/BlackText</item>
+        <item name="android:layout_marginEnd">@dimen/_2dp</item>
+        <item name="android:layout_marginStart">@dimen/_20dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_marginTop">@dimen/_10dp</item>
+    </style>
+
+    <style name="load_accept_text_view_style_bold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/BlackText</item>
+        <item name="android:layout_marginEnd">@dimen/_2dp</item>
+        <item name="android:layout_marginStart">@dimen/_20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/_10dp</item>
+    </style>
+
+    <style name="company_info_text_style_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/_20dp</item>
+    </style>
+
+    <style name="company_info_text_style_title_value">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_toRightOf">@+id/align</item>
+        <item name="android:layout_marginTop">@dimen/_20dp</item>
+    </style>
+
+    <style name="load_accept_Reject_text_view_style_bold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/BlackText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="load_accept_Reject_text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/BlackText</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+
+</resources>

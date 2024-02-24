@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layoutManager="LinearLayoutManager">
+
+    <RelativeLayout
+        android:id="@+id/vehicle_selection_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:background="@color/Blue_700"
+        android:orientation="vertical"
+        android:padding="@dimen/_5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_30sp"
+            android:textColor="@color/white"
+            android:padding="@dimen/_10dp"
+
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@string/roadside"/>
+
+
+    </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/vehicle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/vehicle_selection_layout"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:textSize="@dimen/_20sp"
+                android:text="@string/send_data"/>
+
+
+            <EditText
+                android:layout_below="@+id/vehicle_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_toEndOf="@+id/note_txt"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_15dp"
+                android:paddingBottom="@dimen/_10dp"
+                android:hint="@string/officecode"
+                android:gravity="center"
+                android:paddingEnd="@dimen/_10dp"
+                android:paddingStart="@dimen/_10dp"
+                android:background="@drawable/rectangle_black_bg"/>
+
+            <TextView
+                android:id="@+id/required_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_above="@+id/sendemail_txt"
+                android:paddingBottom="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:paddingEnd="@dimen/_10dp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_10dp"
+                android:textSize="@dimen/_20sp"
+                android:textColor="@color/black"
+                android:text="@string/required_txt1"/>
+
+            <TextView
+                android:id="@+id/sendemail_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_centerInParent="true"
+                android:paddingBottom="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:paddingEnd="@dimen/_10dp"
+                android:gravity="center"
+                android:layout_above="@+id/cancel"
+                android:paddingStart="@dimen/_10dp"
+                android:background="@drawable/rectangle_blue_bg"
+                android:textSize="@dimen/_15sp"
+                android:textColor="@color/white"
+                android:text="Send Data Transfer"/>
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_10dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:paddingStart="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_20dp"
+                android:background="@drawable/rectangle_blue_bg"
+                android:textSize="@dimen/_15sp"
+                android:text="Cancel"/>
+
+</RelativeLayout>

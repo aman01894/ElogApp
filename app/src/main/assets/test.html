@@ -1,0 +1,370 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script src="canvasjs.min.js"></script>
+    <div id="chartContainer" style="height: 200px; max-width: 100%; margin: 0px auto;"></div>
+    <script type="text/javascript">
+        var cValue = [];
+        var dataPoints = [];
+        let minDate = getDate() + " 00:00:00";
+        let maxDate = getDate() + " 24:00:00";
+        var currentDate = new Date();
+        function getdtRange() {
+		var dtRange = [];
+		for(var j = 0; j < 4; j++) {
+			for (var i = 0; i < 24; i++) {
+				var dt = new Date();
+				var item = {
+					x: new Date(
+						currentDate.getFullYear(),
+						currentDate.getMonth(),
+						currentDate.getDate(),
+						i,
+						15
+					),
+					y: [j, j + 0.3],
+				};
+				dtRange.push(item);
+				var item = {
+					x: new Date(
+						currentDate.getFullYear(),
+						currentDate.getMonth(),
+						currentDate.getDate(),
+						i,
+						30
+					),
+					y: [j, j + 0.5],
+				};
+				dtRange.push(item);
+				var item = {
+					x: new Date(
+						currentDate.getFullYear(),
+						currentDate.getMonth(),
+						currentDate.getDate(),
+						i,
+						45
+					),
+					y: [j, j + 0.3],
+				};
+				dtRange.push(item);
+			}
+		}
+
+		return dtRange;
+	}
+
+        function LoadChart() {
+			//alert("Reload");
+            //cValue = Interface.chartData();
+            console.log("SDS: string " + JSON.stringify(cValue));
+
+             cValue="[{\"date\":\"2023-03-22\",\"event_end_time\":\"\",\"id\":0,\"label\":\"OFF_DUTY\",\"lineColor\":\"\",\"x\":\"2023-03-22 00:00\",\"y\":15},{\"date\":\"2023-03-22\",\"event_end_time\":\"\",\"id\":1,\"label\":\"OFF_DUTY\",\"lineColor\":\"\",\"x\":\"2023-03-22 12:31:08\",\"y\":15},{\"date\":\"2023-03-22\",\"event_end_time\":\"\",\"id\":2,\"label\":\"START_DUTY\",\"lineColor\":\"\",\"x\":\"2023-03-22 13:49:59\",\"y\":15},{\"date\":\"2023-03-22\",\"event_end_time\":\"\",\"id\":0,\"label\":\"START_DUTY\",\"lineColor\":\"\",\"x\":\"2023-03-22T13:50:39.924\",\"y\":15}]";
+			 <!--console.log("SDS Fix: string " + JSON.stringify(cValue));-->
+
+            var obj1 = JSON.parse(cValue);
+			
+			var currentstatus = obj1[obj1.length-1];
+			currentstatus.x=getDateTime();
+			obj1.push(currentstatus);
+            console.log(obj1);
+            dataPoints = [];
+            for (var i = 0; i < obj1.length; i++) {
+                var obj = obj1[i];
+                console.log("obj.label: " + JSON.stringify(obj.label));
+                console.log("Y axis: " + JSON.stringify(GetLevel(obj.label)));
+                dataPoints.push({ x: new Date(obj.x), y: GetLevel(obj.label), lineColor: GetColor(obj.label), label: "" });
+            }
+			
+			var options={
+                animationEnabled: false,
+                exportEnabled: false,
+                title: {
+                     text: "Hours Of Service"
+                },
+				toolTip:{
+				contentFormatter: function ( e ) {
+						var y = e.entries[0].dataPoint.y;
+						
+						switch (y) {
+
+                case 3.5:
+                    return "OFF_DUTY " + CanvasJS.formatDate(e.entries[0].dataPoint.x,"HH:mm");
+                    break;
+                case 2.5:
+                    return "SLEEP " + CanvasJS.formatDate(e.entries[0].dataPoint.x,"HH:mm");
+                    break;
+                case 1.5:
+                     return "DRIVE " + CanvasJS.formatDate(e.entries[0].dataPoint.x,"HH:mm");
+                    break;
+                case 0.5:
+                    return "ON DUTY " + CanvasJS.formatDate(e.entries[0].dataPoint.x,"HH:mm");
+                    break;
+                default:
+                    return 3.5;
+            }
+						
+               
+   }  
+ },
+                axisX: {
+					tickLength:0,
+                    minimum: new Date(minDate),
+                    maximum: new Date(maxDate),
+                    title: "Time in Hours.",
+					interval: 1,
+					intervalType: "hour",
+					margin: 10,
+					labelFontColor: "#C24642",
+
+					gridThickness: 1,
+					labelFontColor: "blue",
+					labelFontSize: 8,
+					valueFormatString: "hh",
+                },
+                axisY: {
+				tickLength:0,
+				interval: 1,
+				maximum: 4,
+				margin: 5,
+				gridThickness: 1,
+				labelFontColor: "blue",
+				labelFontSize: 10,
+				stripLines: [
+					{
+						value: 3.5,
+						color: "transparent",
+						label: "OF",
+						labelFontColor: "blue",
+						labelBackgroundColor: "transparent",
+						labelPlacement: "outside",
+					},
+					{
+						value: 2.5,
+						label: "SB",
+						labelFontColor: "blue",
+						labelBackgroundColor: "transparent",
+						color: "transparent",
+						labelPlacement: "outside",
+					},
+					{
+						value: 1.5,
+						label: "D",
+						labelFontColor: "blue",
+						labelBackgroundColor: "transparent",
+						color: "transparent",
+						labelPlacement: "outside",
+					},
+					{
+						value: 0.5,
+						label: "ON",
+						labelFontColor: "blue",
+						labelBackgroundColor: "transparent",
+						color: "transparent",
+						labelPlacement: "outside",
+					},
+				],
+				
+				labelFormatter: function (e) {
+					return "";
+					if (e.value == 4) {
+						return "OF";
+					} else if (e.value == 3) {
+						return "SL";
+					} else if (e.value == 2) {
+						return "DR";
+					} else if (e.value == 1) {
+						return "OD";
+					} else {
+						return "5";
+					}
+				},
+				
+			},
+			axisY2: {
+				interval: 1,
+				tickLength:0,
+				maximum: 4,
+				minimum: 0,
+				margin: 5,
+				gridThickness: 2,
+				labelFontColor: "black",
+				labelFontSize: 15,
+				stripLines: [
+					{
+						value: 3.5,
+						color: "transparent",
+						label: "OF",
+						labelFontColor: "black",
+						labelBackgroundColor: "transparent",
+						labelPlacement: "outside",
+					},
+					{
+						value: 2.5,
+						label: "SB",
+						labelFontColor: "black",
+						labelBackgroundColor: "transparent",
+						color: "transparent",
+						labelPlacement: "outside",
+					},
+					{
+						value: 1.5,
+						label: "D",
+						labelFontColor: "black",
+						labelBackgroundColor: "transparent",
+						color: "transparent",
+						labelPlacement: "outside",
+					},
+					{
+						value: 0.5,
+						label: "ON",
+						labelFontColor: "black",
+						labelBackgroundColor: "transparent",
+						color: "transparent",
+						labelPlacement: "outside",
+					},
+				],
+				 labelFormatter: function (e) {
+					return "";
+				}, 
+			},
+                dataPointWidth: 2,
+                data: [
+                    {
+                        type: "rangeColumn",
+                        color: "black",
+                        dataPoints: getdtRange(),
+                        xValueFormatString:"ss:fff",
+						toolTipContent:null
+                    },
+
+                    {
+						type: "stepLine",
+						color: "rgba(0,204,102,0.7)",
+						markerSize: 5,
+						lineThickness: 4,
+						fillOpacity: 0.2,
+						markerSize: 10,
+                        dataPoints: dataPoints
+                    },
+				{
+					type: "stepLine",
+					color: "rgba(0,204,102,0.7)",
+					markerSize: 5,
+					lineThickness: 4,
+					fillOpacity: 0.2,
+					axisYType: "secondary",
+					dataPoints: getdtRange(),
+				}
+					]
+            };
+			
+            var chart = new CanvasJS.Chart("chartContainer",options );
+            chart.render();
+			 
+        }
+        LoadChart();
+
+        setInterval(function () {
+            LoadChart();
+        }, 1000 * 60 * 2);
+
+        function GetLevel(label) {
+            switch (label) {
+
+                case "OFF_DUTY":
+                    return 3.5;
+                    break;
+				case "SLEEP":
+                    return 2.5;
+                    break;
+                case "DRIVE":
+                    return 1.5;
+                    break;
+                case "START_DUTY":
+                    return .5;
+                    break;
+                
+                default:
+                    return 3.5;
+            }
+        }
+
+        function GetColor(label) {
+            switch (label) {
+                case "DRIVE":
+                    return "GREEN";
+                    break;
+                case "START_DUTY":
+                    return "BLUE";
+                    break;
+                case "SLEEP":
+                    return "BLACK";
+                    break;
+                case "OFF_DUTY":
+                    return "ORANGE";
+                    break;
+
+                default:
+                    return "GREY";
+            }
+        }
+
+        function getDateTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+            return dateTime;
+        }
+        function getDate() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '-' + month + '-' + day;
+            return dateTime;
+        }
+
+    </script>
+</body>
+</html>

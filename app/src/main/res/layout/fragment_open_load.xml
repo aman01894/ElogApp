@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.ui.dispatch.Dispatch_Payroll_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/rel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:background="@color/Blue_700"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="@dimen/_5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_30sp"
+            android:textColor="@color/white"
+            android:padding="@dimen/_10dp"
+            android:layout_centerInParent="true"
+            android:text="@string/pending"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/open_recycle"
+        android:layout_below="@+id/rel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".Pending_Frament"
+        tools:listitem="@layout/fragment_openload_list_item" />
+
+
+
+
+</RelativeLayout>

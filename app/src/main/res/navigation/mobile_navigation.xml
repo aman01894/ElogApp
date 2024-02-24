@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <!-- app:startDestination="@+id/nav_home" for Dispatch only-->
+    <!-- app:startDestination="@+id/nav_dispatch_home" for Dispatch only-->
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.elogapp.activity.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_dispatch_home"
+        android:name="com.example.elogapp.activity.ui.dispatch.DispatchHomeFragment"
+        android:label="@string/menu_dispatch"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_daily_log"
+        android:name="com.example.elogapp.activity.ui.dalily_log.DailyLogFragment"
+        android:label="@string/menu_log"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_pretrip"
+        android:name="com.example.elogapp.activity.ui.dvir_pretrip.DvirPreTripFragment"
+        android:label="@string/menu_Trip"
+        tools:layout="@layout/fragment_pre_trip" />
+    <fragment
+        android:id="@+id/nav_inspection"
+        android:name="com.example.elogapp.activity.ui.dot_inspection.DotInspection"
+        android:label="@string/menu_inspection"
+        tools:layout="@layout/fragment_dot_inspection" />
+    <fragment
+        android:id="@+id/nav_co_driver"
+        android:name="com.example.elogapp.activity.ui.driver.Co_Driverfragment"
+        android:label="@string/menu_driver"
+        tools:layout="@layout/fragment_co__driverfragment" />
+    <fragment
+        android:id="@+id/nav_eqipment"
+        android:name="com.example.elogapp.activity.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_equipment"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_shipping_doc"
+        android:name="com.example.elogapp.activity.ui.shippingdocs.ShippingDocsFragment"
+        android:label="@string/menu_shipping"
+        tools:layout="@layout/fragment_shipping_docs" />
+    <fragment
+        android:id="@+id/nav_company_info"
+        android:name="com.example.elogapp.activity.ui.company_info.CompanyInfoFragment"
+        android:label="@string/menu_company"
+        tools:layout="@layout/fragment_company_info" />
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.elogapp.activity.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_exception"
+        android:name="com.example.elogapp.activity.ui.exception.ExceptionFragment"
+        android:label="@string/menu_exception"
+        tools:layout="@layout/fragment_exception" />
+    <fragment
+        android:id="@+id/nav_unidentified_data"
+        android:name="com.example.elogapp.activity.ui.unidentifiedevent.UnidentifiedEventFragment"
+        android:label="@string/menu_unidentified_data"
+        tools:layout="@layout/fragment_unidentified_data" />
+    <dialog
+        android:id="@+id/nav_logout"
+        android:name="com.example.elogapp.activity.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/nav_dispatch"
+        android:name="com.example.elogapp.activity.ui.dispatch.DispatchHomeFragment"
+        android:label="@string/menu_dispatch"
+        tools:layout="@layout/fragment_dispatch__payroll" />
+    <fragment
+        android:id="@+id/fragment_roadside"
+        android:name="com.example.elogapp.activity.ui.dot_inspection.LogInspectionFragment"
+        android:label="@string/roadside"
+        tools:layout="@layout/fragment_log_inspection" />
+    <fragment
+        android:id="@+id/fragment_roadside_datatransfer"
+        android:name="com.example.elogapp.activity.ui.dot_inspection.DataTransferFragment"
+        android:label="@string/roadside"
+        tools:layout="@layout/fragment_data_transfer" />
+    <fragment
+        android:id="@+id/fragment_pending_list"
+        android:name="com.example.elogapp.activity.ui.loads.pending_load.PendingLoadsListFragment"
+        android:label="@string/pending"
+        tools:layout="@layout/fragment_pending_list" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/fragment_open_list"-->
+<!--        android:name="com.example.elogapp.activity.ui.openlods.OpenLoadFragment"-->
+<!--        android:label="@string/openloads"-->
+<!--        tools:layout="@layout/fragment_open_load" />-->
+
+    <fragment
+        android:id="@+id/fragment_open_load_list"
+        android:name="com.example.elogapp.activity.ui.loads.open_load.OpenLoadListFragment"
+        android:label="@string/openloads"
+        tools:layout="@layout/fragment_open_list" />
+
+    <fragment
+        android:id="@+id/fragment_close_list"
+        android:name="com.example.elogapp.activity.ui.loads.closed_load.ClosedLoadsListFragment"
+        android:label="@string/closeloads"
+        tools:layout="@layout/fragment_closed_load" />
+    <fragment
+        android:id="@+id/fragment_document_list"
+        android:name="com.example.elogapp.activity.ui.document.DocumentLoadFragment"
+        android:label="@string/documentloads"
+        tools:layout="@layout/fragment_document_list" />
+
+    <fragment
+        android:id="@+id/fragment_document_list_gallery"
+        android:name="com.example.elogapp.activity.ui.document.DocGalleryFragment"
+        android:label="@string/documentitemgallery"
+        tools:layout="@layout/fragment_document_list_gallery" />
+    <fragment
+        android:id="@+id/fragment_payment_list"
+        android:name="com.example.elogapp.activity.ui.loads.payment_history.PaymentHistoryFragment"
+        android:label="@string/paymenthistory"
+        tools:layout="@layout/fragment_payment_history" />
+    <fragment
+        android:id="@+id/fragment_open_payment_list"
+        android:name="com.example.elogapp.activity.ui.loads.open_payment.OpenPaymentFragment"
+        android:label="@string/openpayment"
+        tools:layout="@layout/fragment_open_payment" />
+<!--    <fragment-->
+<!--        android:id="@+id/fragment_load_item_list"-->
+<!--        android:name="com.example.elogapp.activity.ui.loaditem.LoadItemFragment"-->
+<!--        android:label="@string/loaditem"-->
+<!--        tools:layout="@layout/fragment_loaditem" />-->
+
+    <fragment
+        android:id="@+id/fragment_pending_load_accept_reject"
+        android:name="com.example.elogapp.activity.ui.loads.pending_load.PendingLoadItemFragment"
+        android:label="@string/loaditem"
+        tools:layout="@layout/fragment_pending_load_list"/>
+
+    <fragment
+        android:id="@+id/fragment_open_load_accept_reject"
+        android:name="com.example.elogapp.activity.ui.loads.open_load.OpenLoadItemFragment"
+        android:label="@string/loaditem"
+        tools:layout="@layout/fragment_open_load_list"/>
+
+
+    <fragment
+        android:id="@+id/fragment_daily_log_chart"
+        android:name="com.example.elogapp.activity.ui.dalily_log.DailyLogChartFragment"
+        android:label="@string/daily_log_chart"
+        tools:layout="@layout/fragment_daily_logs_chart"/>
+
+
+</navigation>

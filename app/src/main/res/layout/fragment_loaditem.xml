@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ui.dispatch.Dispatch_Payroll_Fragment">
+
+    <RelativeLayout
+        android:id="@+id/rel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp">
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/rect_bg_blue"
+                android:elevation="@dimen/_5dp"
+                android:gravity="center"
+                android:padding="@dimen/_10dp"
+                android:text="@string/dispatch_note"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_marginEnd="@dimen/_15dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/rect_bg_blue"
+                android:elevation="@dimen/_5dp"
+                android:gravity="center"
+                android:padding="@dimen/_10dp"
+                android:text="@string/document_upload"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/payment_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel_layout"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".LoadItemFragment"
+        tools:listitem="@layout/fragment_load_item_list_item" />
+
+
+</RelativeLayout>

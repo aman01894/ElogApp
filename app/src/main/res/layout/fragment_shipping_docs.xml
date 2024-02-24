@@ -1,0 +1,101 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shippingDocsViewModel"
+            type="com.example.elogapp.activity.ui.shippingdocs.ShippingDocsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rel_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp">
+
+            <EditText
+                android:id="@+id/doc_no_edit_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:layout_toStartOf="@+id/submit_btn"
+                android:background="@drawable/rect_btn"
+                android:fontFamily="@font/alike"
+                android:gravity="start"
+                android:hint="Enter Shipping Doc(s)"
+                android:maxLength="20"
+                android:padding="@dimen/_5dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sp" />
+
+
+            <TextView
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:background="@drawable/rect_grn_bg"
+                android:fontFamily="@font/alike"
+                android:gravity="center"
+                android:padding="@dimen/_5dp"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sp" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shippingDocsRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/back_btn"
+            android:layout_below="@+id/rel_layout"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:background="@drawable/rect_btn"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".activity.ui.shippingdocs.ShippingDocsFragment"
+            tools:listitem="@layout/fragment_shipping_list_item" />
+
+
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:background="@color/Blue_700"
+            android:fontFamily="@font/alike"
+            android:gravity="center"
+            android:padding="@dimen/_5dp"
+            android:text="BACK"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sp" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+
+    </RelativeLayout>
+
+</layout>

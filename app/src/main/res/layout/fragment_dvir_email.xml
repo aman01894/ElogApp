@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layoutManager="LinearLayoutManager">
+
+    <RelativeLayout
+        android:id="@+id/vehicle_selection_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:background="@color/Blue_700"
+        android:orientation="vertical"
+        android:padding="@dimen/_5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_30sp"
+            android:textColor="@color/white"
+            android:padding="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@string/emaildvir1"/>
+        <TextView
+            android:id="@+id/ic_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_20sp"
+            android:textColor="@color/white"
+            android:paddingTop="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:drawableEnd="@drawable/ic_add_24"
+            android:drawablePadding="@dimen/_10dp"
+            android:text="@string/ic_new"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_20sp"
+            android:textColor="@color/white"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_below="@+id/ic_new"
+            android:layout_marginStart="@dimen/_10dp"
+            android:drawableEnd="@drawable/ic_mark_email_read"
+            android:drawablePadding="@dimen/_10dp"
+            android:text="@string/email"/>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dvir_history_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20sp"
+        android:textColor="@color/Blue_700"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_below="@+id/vehicle_selection_layout"
+        android:layout_marginStart="@dimen/_10dp"
+        android:drawableEnd="@drawable/ic_mark_email_read"
+        android:drawableTint="@color/Blue_700"
+        android:drawablePadding="@dimen/_10dp"
+        android:text="@string/emaildvir"/>
+
+    <EditText
+        android:layout_below="@+id/dvir_history_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_5dp"
+        android:layout_toEndOf="@+id/note_txt"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_15dp"
+        android:paddingBottom="@dimen/_10dp"
+        android:hint="@string/adress"
+        android:gravity="center"
+        android:id="@+id/emailaddress"
+        android:paddingEnd="@dimen/_10dp"
+        android:paddingStart="@dimen/_10dp"
+        android:background="@drawable/rectangle_black_bg"/>
+
+
+    <Button
+        android:id="@+id/i_but"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/_10dp"
+        android:layout_below="@+id/emailaddress"
+        android:background="@drawable/ic_baseline_info_24"
+        />
+    <TextView
+        android:layout_below="@+id/i_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text1"
+        android:layout_marginStart="@dimen/_10dp"
+        android:text="please select which DVIR you would like to send"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_margin="@dimen/_10dp"
+        android:layout_above="@+id/sendemailBtn"
+        android:background="@color/Blue_700"
+        android:layout_below="@+id/text1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@color/white">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list_history"
+                android:name="com.eld.elog.DailyLogItemFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="LinearLayoutManager"
+                tools:context=".DVIREmailFragment"
+                tools:listitem="@layout/fragment_dvir_email_item" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/sendemailBtn"
+        android:layout_width="wrap_content" android:layout_marginBottom="@dimen/_20dp"
+        android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle_bg"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_above="@+id/cancelBtn"
+        android:text="Send Email"/>
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content" android:layout_marginBottom="@dimen/_20dp"
+        android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle_bg"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="Cancel" android:layout_alignParentBottom="true"/>
+
+
+
+
+
+</RelativeLayout>

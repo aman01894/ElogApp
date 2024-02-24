@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.elogapp.activity.ui.document.DocumentLoadListViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.ui.dispatch.Dispatch_Payroll_Fragment">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+
+        <LinearLayout
+            android:id="@+id/rel_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5dp"
+                android:padding="@dimen/_10dp"
+                android:text="From:"
+                android:textColor="@color/BlackText"
+                android:textSize="@dimen/_12sp" />
+
+            <EditText
+                android:id="@+id/startDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5dp"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:hint="DD-MM-YYYY"
+                android:textSize="@dimen/_12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5dp"
+                android:padding="@dimen/_10dp"
+                android:text="To:"
+                android:textColor="@color/BlackText"
+                android:textSize="@dimen/_12sp" />
+
+            <EditText
+                android:id="@+id/endDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5dp"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:hint="DD-MM-YYYY"
+                android:textSize="@dimen/_12sp" />
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_marginStart="@dimen/_5dp"
+                android:background="@color/Blue_700"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sp" />
+
+        </LinearLayout>
+
+
+        <!-- TODO: Update blank fragment layout -->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rel_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/_5dp"-->
+<!--            android:layout_marginTop="@dimen/_5dp"-->
+<!--            android:layout_marginEnd="@dimen/_5dp"-->
+<!--            android:layout_marginBottom="@dimen/_5dp"-->
+<!--            android:background="@color/Blue_700"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="@dimen/_5dp"-->
+<!--            android:visibility="visible">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/startDate"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:cursorVisible="false"-->
+<!--                android:focusable="false"-->
+<!--                android:hint="@string/start_date"-->
+<!--                android:padding="@dimen/_10dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@color/white"-->
+<!--                android:textSize="@dimen/_15sp" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/endDate"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:cursorVisible="false"-->
+<!--                android:focusable="false"-->
+<!--                android:hint="@string/end_date"-->
+<!--                android:padding="@dimen/_10dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textColorHint="@color/white"-->
+<!--                android:textSize="@dimen/_15sp" />-->
+
+
+<!--        </RelativeLayout>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pending_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rel_layout"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".Pending_Frament"
+            tools:listitem="@layout/fragment_pending_list_item" />
+
+
+    </RelativeLayout>
+</layout>

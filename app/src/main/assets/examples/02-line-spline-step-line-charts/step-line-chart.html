@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        var cValue;
+        setTimeout(function () {
+            cValue = Interface.chartData();
+            console.log(JSON.stringify(cValue));
+
+            var temp = JSON.stringify(cValue);
+            cValue = temp.replace(/"([^"]+)":/g, '$1:');
+
+        }, 5000);
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                    text: ""
+                },
+                axisX: {
+                    minimum: new Date("2021-01-01 00:00"),
+                    valueFormatString: "hh:mm",
+                },
+                axisY: {
+                    title: "Voilation",
+                    includeZero: false,
+                    labelFormatter: function (e) {
+                        console.log(e);
+                        if (e.value == 1) {
+                            return "OD";
+                        } else {
+                            return "OF";
+                        }
+                    },
+                },
+                data: [{
+                    type: "stepLine", yValueFormatString: "#0.0'%'", xValueFormatString: "MMM YYYY",
+                    markerSize: 5
+                    , dataPoints: cValue
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+    <script src="../../canvasjs.min.js"></script>
+</body>
+</html>

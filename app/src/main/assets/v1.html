@@ -1,0 +1,253 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script src="canvasjs.min.js"></script>
+    <div id="chartContainer" style="height: 200px; max-width: 100%; margin: 0px auto;"></div>
+    <script type="text/javascript">
+        var cValue = [];
+        var dataPoints = [];
+        let minDate = getDate() + " 00:00:00";
+        let maxDate = getDate() + " 24:00:00";
+        var currentDate = new Date();
+        function getdtRange(y, z) {
+            var dtRange = [];
+            for (var i = 0; i < 24; i++) {
+                var dt = new Date();
+                var item = {
+                    x: new Date(
+                        currentDate.getFullYear(),
+                        currentDate.getMonth(),
+                        currentDate.getDate(),
+                        i,
+                        15
+                    ),
+                    y: [y, z + 0.3],
+                };
+                dtRange.push(item);
+                var item = {
+                    x: new Date(
+                        currentDate.getFullYear(),
+                        currentDate.getMonth(),
+                        currentDate.getDate(),
+                        i,
+                        30
+                    ),
+                    y: [y, z + 0.5],
+                };
+                dtRange.push(item);
+                var item = {
+                    x: new Date(
+                        currentDate.getFullYear(),
+                        currentDate.getMonth(),
+                        currentDate.getDate(),
+                        i,
+                        45
+                    ),
+                    y: [y, z + 0.3],
+                };
+                dtRange.push(item);
+            }
+
+            return dtRange;
+        }
+
+        function LoadChart() {
+            //cValue = Interface.chartData();
+            console.log("SDS: string " + JSON.stringify(cValue));
+
+            //cValue="[{\"label\":\"START_DUTY\",\"lineColor\":\"BLUE\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2023-2-10 06:00\",\"y\":1},{\"label\":\"START_DUTY\",\"lineColor\":\"BLUE\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2023-2-10 06:00\",\"y\":1},{\"label\":\"DRIVE\",\"lineColor\":\"GREEN\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2023-2-10 06:00\",\"y\":2},{\"label\":\"DRIVE\",\"lineColor\":\"GREEN\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2023-2-10 16:00\",\"y\":2}]" ;
+            cValue = "[{\"date\":\"2023-2-10\",\"event_end_time\":\"\",\"id\":1,\"label\":\"START_DUTY\",\"lineColor\":\"\",\"x\":\"2023-2-10 08:39:44\",\"y\":15},{\"date\":\"2021-11-21\",\"event_end_time\":\"\",\"id\":2,\"label\":\"DRIVE\",\"lineColor\":\"\",\"x\":\"2021-11-21 19:42:38\",\"y\":15}]";            //cValue = "[{\"date\":\"2021-12-06\",\"event_end_time\":\"2021-12-05 18:52:11\",\"id\":0,\"label\":\"SLEEP\",\"lineColor\":\"\",\"x\":\"2021-12-06 00:00\",\"y\":0},{\"date\":\"2021-12-06\",\"event_end_time\":\"2021-12-05 18:52:11\",\"id\":0,\"label\":\"SLEEP\",\"lineColor\":\"ORANGE\",\"x\":\"2021-12-06T10:19:36.943\",\"y\":0}]";
+
+            const obj1 = JSON.parse(cValue);
+            console.log(obj1);
+            dataPoints = [];
+            for (var i = 0; i < obj1.length; i++) {
+                var obj = obj1[i];
+                dataPoints.push({ x: new Date(obj.x), y: GetLevel(obj.label), lineColor: GetColor(obj.label), label: "" });
+            }
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: false,
+                exportEnabled: false,
+                title: {
+                    //text: "Test Chart"
+                },
+                axisX: {
+                    minimum: new Date(minDate),
+                    maximum: new Date(maxDate),
+                    valueFormatString: "H",
+                    interval: 1,
+                    intervalType: "hour",
+                    labelAngle: 0,
+                    gridThickness: 1,
+                    labelFontColor: "black",
+                    labelFontSize: 8,
+                    valueFormatString: "hTT",
+                },
+                axisY: {
+                    // title: "Voilation",
+                    interval: 1,
+                    maximum: 4,
+                    includeZero: false,
+                    valueFormatString: ".",
+                    labelFormatter: function (e) {
+                        if (e.value == 4) {
+                            return "OF";
+                        } else
+                            if (e.value == 3) {
+                                return "SL";
+                            } else
+                                if (e.value == 2) {
+                                    return "DR";
+                                } else
+                                    if (e.value == 1) {
+                                        return "OD";
+                                    } else {
+                                        return "";
+                                    }
+                    },
+                },
+                dataPointWidth: 1,
+                data: [
+                    {
+                        type: "rangeColumn",
+                        color: "black",
+                        dataPoints: getdtRange(0, 0),
+                    },
+
+                    {
+                        type: "rangeColumn",
+                        color: "black",
+                        dataPoints: getdtRange(1, 1),
+                    },
+
+                    {
+                        type: "rangeColumn",
+                        color: "black",
+                        dataPoints: getdtRange(2, 2),
+                    },
+                    {
+                        type: "rangeColumn",
+                        color: "black",
+                        dataPoints: getdtRange(3, 3),
+                    },
+                    {
+                        type: "rangeColumn",
+                        color: "black",
+                        dataPoints: getdtRange(4, 4),
+                    },
+                    {
+                        type: "stepLine",
+                        yValueFormatString: ".",
+                        xValueFormatString: "MMM YYYY",
+                        markerSize: 0,
+                        lineThickness: 3,
+                        dataPoints: dataPoints
+                    }]
+            });
+            chart.render();
+        }
+        LoadChart();
+
+        setInterval(function () {
+            LoadChart();
+        }, 1000 * 60 * 2);
+
+        function GetLevel(label) {
+            switch (label) {
+
+                case "OFF_DUTY":
+                    return 3.5;
+                    break;
+                case "DRIVE":
+                    return 1.5;
+                    break;
+                case "START_DUTY":
+                    return .5;
+                    break;
+                case "SLEEP":
+                    return 2.5;
+                    break;
+                default:
+                    return 3.5;
+            }
+        }
+
+        function GetColor(label) {
+            switch (label) {
+                case "DRIVE":
+                    return "GREEN";
+                    break;
+                case "START_DUTY":
+                    return "BLUE";
+                    break;
+                case "SLEEP":
+                    return "BLACK";
+                    break;
+                case "OFF_DUTY":
+                    return "ORANGE";
+                    break;
+
+                default:
+                    return "GREY";
+            }
+        }
+
+        function getDateTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+            return dateTime;
+        }
+        function getDate() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '-' + month + '-' + day;
+            return dateTime;
+        }
+
+    </script>
+</body>
+</html>

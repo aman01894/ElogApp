@@ -1,0 +1,309 @@
+<resources>
+    <string name="app_name">Road Link</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="all_right">All rights are reserved @ ELOG-365</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_log">Daily Logs</string>
+    <string name="menu_Trip">DVIR Pre-Trip</string>
+    <string name="menu_inspection">DOT Inspection</string>
+    <string name="menu_driver">CO-Driver</string>
+    <string name="driver">Driver</string>
+    <string name="time">Time(PT)</string>
+    <string name="date">Date</string>
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
+    <string name="location">Location</string>
+    <string name="menu_equipment">Equipment</string>
+    <string name="menu_shipping">Shipping Docs</string>
+    <string name="menu_company">Company Info</string>
+    <string name="on_duty_btn">ON DUTY</string>
+    <string name="off_duty_btn">OFF DUTY</string>
+    <string name="sleep_btn">SLEEP</string>
+    <string name="drive_btn">DRIVE</string>
+    <string name="personal_use">Personal Use</string>
+    <string name="yard_moves">Yard Moves</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_exception">Exception</string>
+    <string name="menu_logout">Log-Out</string>
+    <string name="menu_dispatch">Dispatch &amp; Payroll</string>
+    <string name="menu_unidentified_data">Unidentified Packet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="current_status"> Current Status </string>
+    <string name="available_hours">Available Hours</string>
+    <string name="daily_log">Daily Log</string>
+    <string name="daily_logs">Daily<br>Logs</br></string>
+    <string name="dispatch">Dispatch</string>
+    <string name="payroll">Driver Payroll</string>
+    <string name="pending">Pending Loads</string>
+    <string name="address">Delta Fresh Produce 2310 W Main St R\O Rico, AZ 85316</string>
+    <string name="phone">Phone : </string>
+    <string name="datetime">Date and time :</string>
+    <string name="temp">Temp:</string>
+    <string name="refermode">Refer Mode :</string>
+    <string name="pick_">Pick up# 123456</string>
+    <string name="commodity">Commodity : Fresh Produce</string>
+    <string name="cases">Cases : 900</string>
+    <string name="pallets">22</string>
+    <string name="weight">42,000 LBS</string>
+    <string name="dispatch_note">Dispatch Notes</string>
+    <string name="document_upload">Document Upload</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+
+    <string name="pickup">PickUp</string>
+    <!--    <string name="status">Status</string>-->
+    <string name="paymentstatus">Payment Status</string>
+    <string name="paymentamount">Payment Amount</string>
+    <string name="reject">Rejected</string>
+    <string name="none">None</string>
+    <string name="direction">Direction</string>
+    <string name="paid">Paid</string>
+    <string name="npaid">Not Paid</string>
+    <string name="checkin">Check-in</string>
+    <string name="closeloads">Closed Loads</string>
+    <string name="openloads">Open Loads</string>
+    <string name="paymenthistory">Payment History</string>
+    <string name="openpayment">Open Payment</string>
+    <string name="loaditem">Load Item</string>
+    <string name="daily_log_chart">Daily Log Chart</string>
+    <string name="documentloads">Document Upload</string>
+    <string name="documentitemgallery">All Document</string>
+    <string name="roadside">Roadside<br>Inspection</br></string>
+    <string name="co_driver">Co-Driver<br>Log-In</br></string>
+    <string name="dvir">DVIR</string>
+    <string name="emaildvir1">EMAIL <b> DVIR </b></string>
+    <string name="email">Email</string>
+    <string name="cycle">Cycle</string>
+    <string name="ic_new">New</string>
+    <string name="dvir__history_text">DVIR History</string>
+    <string name="recap">Recap</string>
+    <string name="emaillogs">Email Logs</string>
+    <string name="datatransfer">Data Transfer</string>
+    <string name="review">Review On Device</string>
+    <string name="bluetooth">Bluetooth Connection</string>
+    <string name="emaildvir">Email DVIR</string>
+    <string name="exit">Exit</string>
+    <string name="ok">OK</string>
+    <string name="continue_btn">Continue</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="daily_log_email">Send Required Daily logs via Email </string>
+    <string name="send_data">Send 8 Daily Logs via <br>  FMCSA com.example.elogapp.dto.dto1.Data Transfer</br> </string>
+    <string name="reciepentmail">Enter Receipient Email</string>
+    <string name="adress">Enter Email address</string>
+    <string name="officecode">Enter Office Code</string>
+    <string name="exceptiontext">Enter reason for exception(s)</string>
+    <string name="hour">Hours Work</string>
+    <string name="required_txt">Please remember this will only send your certified logs. Please certify the required logs before sending this email.</string>
+    <string name="required_txt1">Please remember this will Send 8 Daily Logs via FMCSA Data Transfer</string>
+
+    <string name="selected_item">Selected item:</string>
+    <string name="selected_co_driver">Select Co-Driver</string>
+    <string name="selected_vehicle">Select Truck No.</string>
+    <string name="selected_trailer">Select Trailer</string>
+
+    <string name="dialog_title_address">Location</string>
+    <string name="dialog_title_Msg">Message</string>
+    <string name="dialog_title_Error">Error</string>
+    <string name="dialog_title_alert">Alert</string>
+    <string name="are_you_sure">Are you sure you want to delete?</string>
+    <string name="server_error">Oops! Something went wrong. Please try again later.</string>
+    <string name="internet_error">Please check your Internet connection or try again later.</string>
+    <string name="accept">Accept</string>
+    <string name="reject_btn">Reject</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="select_exception">Select at least one exception type.</string>
+    <string name="select_unidentified">Select at least one unidentified event.</string>
+    <string name="start_duty">Start your duty first.</string>
+    <string name="unidentified_event_added">Event accepted successfully.</string>
+    <string name="exception_added">Exception inserted successfully.</string>
+    <string name="no_pending_load">No Pending Load is available.</string>
+    <string name="no_unidentified">No Unidentified packets are available.</string>
+    <string name="no_open_load">No Open Load is available.</string>
+    <string name="no_Payment_history">No Payment History is available.</string>
+    <string name="no_daily_log">No Daily Log Data available.</string>
+    <string name="personal_use_msg">For Personal use can be used only in off duty.</string>
+    <string name="yard_move_msg">Yard Move use can be used only in ON Duty Not Driving Mode.</string>
+    <string name="reset_duty">Your New duty Started now.</string>
+    <string name="complete_off_duty_hours">You have completed your off duty hours, duty clock is going to reset.</string>
+    <string name="complete_sleep_hours">You have completed your sleep hours, duty clock is going to reset.</string>
+    <string name="duty_rest">Your duty hours has  been reset, please re-start your duty first.</string>
+    <string name="duty_rest_clock_70">Your 70 hours has  been completed, please go to 34 hour sleep.</string>
+    <string name="clock_34_not_completed">Your 34 hours clock for duty allocation is still pending,
+        Press continue to start 34 hour sleep.</string>
+
+
+    <string name="vehicle_condition_satisfactory">Vehicle Condition Satisfactory</string>
+    <string name="notes">Notes</string>
+    <string name="no_defects">NO DEFECTS</string>
+    <string name="has_defects">HAS DEFECTS</string>
+    <string name="load_name">Load: </string>
+    <string name="load_distance">Distance: </string>
+    <string name="load_has_multiple_pickup_amp_drops"><![CDATA[Load has multiple pickup & drops]]></string>
+
+    <string name="agreement">I agree the terms and conditions.</string>
+    <string name="clear_pad">Clear</string>
+    <string name="save_signature">Certify</string>
+    <!--    <string name="cancel">Cancel</string>-->
+    <string name="compress_signature">Scale 50%</string>
+
+
+    <string name="event_name">Event Name</string>
+    <string name="event_time">Time</string>
+    <string name="event_type">Event Type</string>
+    <string name="driver_name">Driver Name</string>
+
+    <string-array name="truckno">
+        <item>UP14CY0217</item>
+        <item>UP14CY0224</item>
+        <item>UP15CY0217</item>
+        <item>UP15CY0217</item>
+        <item>UP15CY0219</item>
+        <item>UP16CY0219</item>
+    </string-array>
+    <string-array name="drivername">
+        <item>Vaibhav Singh</item>
+        <item>Vaibhav</item>
+        <item>Vivek</item>
+        <item>Vivek K singh</item>
+        <item>Sudhakar</item>
+        <item>Sudhakar Sharma</item>
+        <item>Sud</item>
+    </string-array>
+
+    <string-array name="doc_type">
+        <item>Select</item>
+        <item>RC</item>
+        <item>PUC</item>
+        <item>Driving License</item>
+        <item>Vehicle Permit</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <string name="pt_name">Pacific Track</string>
+
+    <!--    <string name="navigation_drawer_open">Open navigation drawer</string>-->
+    <!--    <string name="navigation_drawer_close">Close navigation drawer</string>-->
+
+    <string name="device">Device:</string>
+    <string name="no_device">&lt;Select a device&gt;</string>
+    <string name="select_device">Select a device</string>
+    <string name="status">Status</string>
+    <string name="llsWrite">LinkLossAlert</string>
+    <string name="iasWrite">ImmediateAlert</string>
+    <string name="scanning">Scanning for devices…</string>
+    <string name="no_ble_devices">No LE devices found.</string>
+    <string name="no_required_permission">Permission denied.</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Not connected</string>
+    <string name="ready">Ready</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="connect">Connect</string>
+    <string name="connecting">Cancel</string>
+    <string name="disconnecting">Cancel</string>
+    <string name="RadioButton1">Alert level high</string>
+    <string name="RadioButton2">Alert level mid</string>
+    <string name="RadioButton3">Stop alerting</string>
+    <string name="SystemId">SystemId</string>
+    <string name="ModelNumber">ModelNumber</string>
+    <string name="SerialNumber">SerialNumber</string>
+    <string name="FirmwareRevision">FirmwareRevision</string>
+    <string name="HardwareRevision">HardwareRevision</string>
+    <string name="SoftwareRevision">SoftwareRevision</string>
+    <string name="ManufactureName">ManufactureName</string>
+    <string name="RegCertDataList">RegCertDataList</string>
+    <string name="ManufactureId">    ManufactureId</string>
+    <string name="BatteryLevel">    Battery Level</string>
+    <string name="OrgId">    OrganizationId</string>
+    <string name="Txpower">    Txpower Level</string>
+    <string name="Noupdate">    No Update</string>
+    <string name="ReadTxPower">ReadTxPower</string>
+    <string name="high_alert">HIGH Alert triggered!</string>
+    <string name="low_alert">LOW Alert triggered!</string>
+    <string name="writeTxnoti">TxNoti</string>
+    <string name="readRssi">Read Rssi Value</string>
+    <string name="Readdummy">D Read</string>
+    <string name="removeBond">Remove Bond</string>
+    <string name="paired">paired</string>
+    <string name="popup_title">Quit EldMan</string>
+    <string name="popup_message">Do you want to quit this Application?</string>
+    <string name="popup_yes">YES</string>
+    <string name="popup_no">NO</string>
+    <string name="ble_not_supported">Bluetooth Low Energy not supported</string>
+    <string name="scan">Scan</string>
+    <string name="cancel">Cancel</string>
+
+    <!--    <string name="action_settings">Settings</string>-->
+    <string name="action_fup">Update Firmware</string>
+    <string name="action_chk_fup">Chk For Update</string>
+    <string name="action_sd">Run Diags</string>
+    <string name="action_fup_file">Select Firmware</string>
+    <string name="action_sv">System Vars</string>
+    <string name="action_demo_spn">Register Fuel Level SPN</string>
+    <string name="action_get_ctrl_fw">Controller Firmware</string>
+    <string name="action_get_ble_fw">BLE Firmware</string>
+
+    <string name="action_adv">Commands</string>
+    <string name="action_get_dtc">Get DTC</string>
+    <string name="action_clear_dtc">Clear DTC</string>
+
+    <string name="scanner_title">Select device:</string>
+    <string name="scanner_empty">No device found</string>
+    <string name="scanner_action_scan">Scan</string>
+    <string name="scanner_action_cancel">Cancel</string>
+    <string name="scanner_subtitle_bonded">BONDED DEVICES:</string>
+    <string name="scanner_subtitle_not_bonded">AVAILABLE DEVICES:</string>
+    <string name="scanner_permission_rationale">Since Android 6.0 Marshmallow system requires granting access to device\'s location in order to scan for Bluetooth Smart devices. Bluetooth beacons may be used to determine the phone\'s and user\'s location.</string>
+    <string name="not_available">n/a</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_dev_settings">Settings</string>
+    <string name="title_activity_sv_settings">Device Settings</string>
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_devmode">Dev mode</string>
+    <string name="pref_description_devmode">Enable/Disable Development mode</string>
+
+    <string name="pref_title_ver_override">Override Device Version</string>
+    <string name="pref_description_ver_override">Enable/Disable version Override</string>
+
+    <string name="pref_title_version_user">Device Version in xxxx,nn</string>
+
+
+    <string name="upgrade_in_progress">Upgrading …</string>
+    <string name="upgrade_uptodate">Done</string>
+    <!--    <string name="perf_file">com.pt.devicemanager.perf</string>-->
+
+    <!--System variables -->
+    <string name="pref_description_sv_pe">Time(sec) between periodic events</string>
+    <string name="pref_title_sv_pe">PE</string>
+
+    <string name="pref_description_sv_be">Enable/Disable BLE events</string>
+    <string name="pref_title_sv_be">BE</string>
+
+    <string name="pref_description_sv_ue">Enable/Disable UART events</string>
+    <string name="pref_title_sv_ue">UE</string>
+
+    <!-- Privacy -->
+    <string name="privacy_policy"><a href="https://www.pacifictrack.com/privacy-policy/eldman">Privacy Policy</a></string>
+    <string name="privacy_notice">I have read and agree to the Privacy Policy.</string>
+    <string name="privacy_accept">Accept</string>
+
+    <string name="channel_connected_devices_title">Tracking in progress …</string>
+    <string name="channel_update_title">Update in progress …</string>
+    <string name="channel_connected_devices_description">Shows a notification when a tracker is connected in background.</string>
+    <string name="channel_update_description">Shows a notification when an update is being performed.</string>
+    <string name="title_activity_tracker_manager">EldMan</string>
+    <string name="mac_id">Enter last 4 digit of ELD mac id</string>
+
+</resources>

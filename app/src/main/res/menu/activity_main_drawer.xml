@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_dispatch_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/menu_home" android:visible="false"/>
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_daily_log"
+            android:icon="@drawable/ic_menu_logs"
+            android:title="@string/menu_log" />
+
+        <item
+            android:id="@+id/nav_inspection"
+            android:icon="@drawable/ic_menu_inspection"
+            android:title="@string/menu_inspection" />
+        <item
+            android:id="@+id/nav_co_driver"
+            android:icon="@drawable/ic_menu_driver"
+            android:title="@string/menu_driver" />
+        <item
+            android:id="@+id/nav_pretrip"
+            android:icon="@drawable/ic_menu_trips"
+            android:title="@string/menu_Trip" />
+        <item
+            android:id="@+id/nav_eqipment"
+            android:icon="@drawable/ic_menu_equip"
+            android:title="@string/menu_equipment" />
+        <item
+            android:id="@+id/nav_shipping_doc"
+            android:icon="@drawable/ic_menu_docs"
+            android:title="@string/menu_shipping" />
+        <item
+            android:id="@+id/nav_company_info"
+            android:icon="@drawable/ic_menu_info"
+            android:title="@string/menu_company" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/menu_settings"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_exception"
+            android:icon="@drawable/ic_menu_exception"
+            android:title="@string/menu_exception" />
+        <item
+            android:id="@+id/nav_unidentified_data"
+            android:icon="@drawable/ic_menu_exception"
+            android:title="@string/menu_unidentified_data" />
+        <item
+            android:id="@+id/nav_dispatch"
+            android:icon="@drawable/ic_menu_payroll"
+            android:title="@string/menu_dispatch" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_logout"
+            android:title="@string/menu_logout" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Tools"
+            android:visible="false"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/content_privacy"
+            android:title="Privacy"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/versionTxt"
+            android:title="V1.0"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/switch_item"
+            app:actionLayout="@layout/drawer_switch"
+            android:title="Test Mode" />
+
+
+    </group>
+
+</menu>

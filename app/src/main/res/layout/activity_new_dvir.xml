@@ -1,0 +1,255 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="newDvirViewModel"
+            type="com.example.elogapp.activity.ui.dvir.NewDvirViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5dp"
+                android:background="@color/Blue_700"
+                android:orientation="vertical"
+                android:padding="@dimen/_5dp">
+
+
+                <TextView
+                    android:id="@+id/driverNameTitle"
+                    style="@style/dvir_txt_view"
+                    android:drawablePadding="@dimen/_5dp"
+                    android:text="Driver : "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/driver_name"
+                    style="@style/dvir_txt_view"
+                    android:layout_toEndOf="@+id/driverNameTitle"
+                    android:text="" />
+
+
+                <LinearLayout
+                    android:id="@+id/line_trailer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/driverNameTitle"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/trailerNoAutotext"
+                        style="@style/dvir_txt_view"
+                        android:text="Time(PT) : "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/time_tv"
+                        style="@style/dvir_txt_view"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="@dimen/_5dp"
+                        android:text="" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/date_title"
+                    style="@style/dvir_txt_view"
+                    android:layout_below="@+id/line_trailer"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:text="Date : "
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/date_tv"
+                    style="@style/dvir_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/line_trailer"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:layout_toEndOf="@+id/date_title"
+                    android:text="" />
+
+
+                <TextView
+                    android:id="@+id/location_title"
+                    style="@style/dvir_txt_view"
+                    android:layout_below="@+id/date_title"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:text="Location : "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/location_tv"
+                    style="@style/dvir_txt_view"
+                    android:layout_below="@+id/date_title"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:layout_toEndOf="@+id/location_title"
+                    android:text=""
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/truckNo"
+                style="@style/dvir_txt_view"
+                android:layout_below="@+id/top_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_5dp"
+                android:text="TRUCK #13"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+
+            <RadioGroup
+                android:id="@+id/truck_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/truckNo"
+                android:layout_margin="@dimen/_2dp"
+                android:background="@drawable/rectangle_but_bg"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="@dimen/_10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_no_defect_truck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/no_defects" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_defect_truck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_defects" />
+
+                <TextView
+                    android:id="@+id/defects_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30dp"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/trailerNo"
+                style="@style/dvir_txt_view"
+                android:layout_below="@+id/truck_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_5dp"
+                android:text="TRAILER #13"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
+
+            <RadioGroup
+                android:id="@+id/trailer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trailerNo"
+                android:layout_margin="@dimen/_2dp"
+                android:background="@drawable/rectangle_but_bg"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="@dimen/_10dp">
+
+                <RadioButton
+                    android:id="@+id/radio_no_defect_trailer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/no_defects" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_defect_trailer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5dp"
+                    android:text="@string/has_defects" />
+
+                <TextView
+                    android:id="@+id/defect_trailer_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30dp"
+                    android:text=""
+                    android:textColor="@color/black" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/notes_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trailer_layout"
+                android:layout_margin="@dimen/_2dp"
+                android:background="@drawable/rectangle_but_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/notes_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_margin="@dimen/_10dp"
+                    android:background="@drawable/rectangle_but_bg"
+                    android:gravity="top|start"
+                    android:hint="@string/notes"
+                    android:maxLength="180"
+                    android:padding="@dimen/_5dp"
+                    android:textColor="@color/black"
+                    android:textStyle="normal" />
+
+                <CheckBox
+                    android:id="@+id/vehicle_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vehicle_condition_satisfactory" />
+
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/common_button"
+                android:layout_below="@+id/notes_layout"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:text="@string/submit" />
+
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/common_button"
+                android:layout_below="@+id/btnSubmit"
+                android:layout_marginBottom="@dimen/_30dp"
+                android:text="@string/back" />
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>

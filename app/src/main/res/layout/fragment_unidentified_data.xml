@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.elogapp.activity.ui.unidentifiedevent.UnidentifiedEventViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MainActivity">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <!-- TODO: Update blank fragment layout -->
+        <RelativeLayout
+            android:id="@+id/rel_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5dp"
+            android:background="@color/Blue_700"
+            android:orientation="vertical"
+            android:padding="@dimen/_5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/_10dp"
+                android:text="@string/no_unidentified"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_30sp" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/exception_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnLayout"
+            android:layout_below="@+id/rel_layout"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".Pending_Frament"
+            tools:listitem="@layout/fragment_unidentified_data_list_item" />
+
+
+        <LinearLayout
+            android:id="@+id/btnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="wrap_content"
+                style="@style/common_button"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:text="@string/accept" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btnReject"
+                style="@style/common_button"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/reject_btn" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/btnBack"
+                style="@style/common_button"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/cancel" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

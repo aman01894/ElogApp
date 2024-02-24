@@ -1,0 +1,175 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script src="canvasjs.min.js"></script>
+    <div id="chartContainer" style="height: 200px; max-width: 100%; margin: 0px auto;"></div>
+    <script type="text/javascript">
+        var cValue = [];
+        var dataPoints = [];
+        function LoadChart() {
+            let minDate = getDate() + " 00:00:00";
+            let maxDate = getDate() + " 24:00:00";
+
+            //cValue = Interface.chartData();
+
+            console.log("SDS: string " + JSON.stringify(cValue));
+
+            //cValue="[{\"label\":\"START_DUTY\",\"lineColor\":\"BLUE\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2021-11-20 06:00\",\"y\":1},{\"label\":\"START_DUTY\",\"lineColor\":\"BLUE\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2021-11-20 06:00\",\"y\":1},{\"label\":\"DRIVE\",\"lineColor\":\"GREEN\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2021-11-20 06:00\",\"y\":2},{\"label\":\"DRIVE\",\"lineColor\":\"GREEN\",\"x\":\"Nov 20, 2021 4:05:33 PM\",\"x1\":\"2021-11-20 16:00\",\"y\":2}]" ;
+            //cValue = "[{\"date\":\"2021-11-20\",\"event_end_time\":\"\",\"id\":1,\"label\":\"START_DUTY\",\"lineColor\":\"\",\"x\":\"2021-11-20 08:39:44\",\"y\":0},{\"date\":\"2021-11-21\",\"event_end_time\":\"\",\"id\":2,\"label\":\"DRIVE\",\"lineColor\":\"\",\"x\":\"2021-11-21 19:42:38\",\"y\":0}]";
+            cValue = "[{\"date\":\"2021-11-24\",\"event_end_time\":\"2021-11-23 15:36:44\",\"id\":0,\"label\":\"START_DUTY\",\"lineColor\":\"\",\"x\":\"2021-11-24T00:00\",\"y\":0},{\"date\":\"2021-11-24\",\"event_end_time\":\"2021-11-23 15:36:44\",\"id\":0,\"label\":\"START_DUTY\",\"lineColor\":\"ORANGE\",\"x\":\"2021-11-24T00:42:30.923\",\"y\":0}]";
+            const obj1 = JSON.parse(cValue);
+            dataPoints = [];
+            for (var i = 0; i < obj1.length; i++) {
+                var obj = obj1[i];
+                dataPoints.push({ x: new Date(obj.x), y: GetLevel(obj.label), lineColor: GetColor(obj.label), label: obj.label });
+            }
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                exportEnabled: false,
+                title: {
+                    //text: "Test Chart"
+                },
+                axisX: {
+                    minimum: new Date(minDate),
+                    maximum: new Date(maxDate),
+                    valueFormatString: "HH",
+                    interval: 1,
+                    intervalType: "hour",
+                },
+                axisY: {
+                    // title: "Voilation",
+                    interval: 1,
+                    includeZero: true,
+                    labelFormatter: function (e) {
+                        console.log(e);
+                        if (e.value == 4) {
+                            return "OF";
+                        } else
+                            if (e.value == 3) {
+                                return "SL";
+                            } else
+                                if (e.value == 2) {
+                                    return "DR";
+                                } else
+                                    if (e.value == 1) {
+                                        return "OD";
+                                    } else {
+                                        return "";
+                                    }
+                    },
+                },
+                data: [{
+                    type: "stepLine",
+                    yValueFormatString: ".",
+                    xValueFormatString: "MMM YYYY",
+                    markerSize: 5,
+                    lineThickness: 2,
+                    dataPoints: dataPoints
+                }]
+            });
+            chart.render();
+        }
+        LoadChart();
+
+        setInterval(function () {
+            LoadChart();
+        }, 1000 * 10);
+
+        function GetLevel(label) {
+            switch (label) {
+                case "DRIVE":
+                    return 2;
+                    break;
+                case "START_DUTY":
+                    return 3;
+                    break;
+                case "SLEEP":
+                    return 1;
+                    break;
+                default:
+                    return 4;
+            }
+        }
+
+        function GetColor(label) {
+            switch (label) {
+                case "DRIVE":
+                    return "GREEN";
+                    break;
+                case "START_DUTY":
+                    return "BLUE";
+                    break;
+                case "SLEEP":
+                    return "BLACK";
+                    break;
+                default:
+                    return "RED";
+            }
+        }
+
+        function getDateTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+            return dateTime;
+        }
+        function getDate() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+
+            //day = now.getUTCDate();
+            //hour = now.getUTCHours();
+            //minute = now.getUTCMinutes();
+            //second = now.getUTCSeconds();
+
+
+            if (month.toString().length == 1) {
+                month = '0' + month;
+            }
+            if (day.toString().length == 1) {
+                day = '0' + day;
+            }
+            if (hour.toString().length == 1) {
+                hour = '0' + hour;
+            }
+            if (minute.toString().length == 1) {
+                minute = '0' + minute;
+            }
+            if (second.toString().length == 1) {
+                second = '0' + second;
+            }
+            var dateTime = year + '-' + month + '-' + day;
+            console.log("SDS: UTC dateTime " + dateTime);
+            return dateTime;
+        }
+    </script>
+</body>
+</html>

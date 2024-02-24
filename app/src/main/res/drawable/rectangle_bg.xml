@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <!-- fill/color -->
+    <solid
+        android:color="@color/Blue_700"/>
+
+    <!-- Control the width and height of the shape -->
+    <size
+        android:width="200dp"
+        android:height="40dp"/>
+
+    <!-- Control the radius of each corners -->
+    <corners
+        android:topLeftRadius="35dp"
+        android:topRightRadius="35dp"
+        android:bottomLeftRadius="35dp"
+        android:bottomRightRadius="35dp"/>
+
+    <gradient
+        android:centerColor="@color/skyBlue"
+        android:endColor="@color/skyBlue"
+        android:startColor="@color/Blue_700"
+        android:type="linear" />
+
+</shape>

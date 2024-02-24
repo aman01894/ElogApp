@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/skyBlue"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp"
+    app:cardMaxElevation="6dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:id="@+id/llLoadName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/load_text_view_style"
+                android:text="@string/load_name" />
+
+            <TextView
+                android:id="@+id/textViewLoadName"
+                style="@style/load_text_view_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/load_text_view_style"
+                android:text="@string/load_distance" />
+
+            <TextView
+                android:id="@+id/textViewDistance"
+                style="@style/load_text_view_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llLoadName"
+            android:layout_marginTop="3dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/_5dp" >
+
+                <TextView
+                    style="@style/load_text_view_style"
+                    android:text="Pickup"
+                    android:textColor="@color/BlackText" />
+
+                <TextView
+                    android:id="@+id/date_time"
+                    style="@style/load_text_view_style"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:text="sertewrtwe"
+                    android:textColor="@color/DarkGray" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_drop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_5dp" />
+
+            <TextView
+                style="@style/load_text_view_style"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/_5dp"
+                android:text="Delivery"
+                android:textColor="@color/BlackText" />
+
+            <LinearLayout
+                android:id="@+id/lay_pickup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_5dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/item_reject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@drawable/rect_red_bg"
+                android:paddingStart="@dimen/_10dp"
+                android:paddingTop="@dimen/_5dp"
+                android:paddingEnd="@dimen/_10dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:text="@string/reject"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/item_has_multiple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:paddingStart="@dimen/_10dp"
+                android:paddingTop="@dimen/_5dp"
+                android:paddingEnd="@dimen/_10dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:text="@string/load_has_multiple_pickup_amp_drops"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

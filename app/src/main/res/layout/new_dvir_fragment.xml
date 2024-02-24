@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layoutManager="LinearLayoutManager">
+
+    <RelativeLayout
+        android:id="@+id/vehicle_selection_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:background="@color/Blue_700"
+        android:orientation="vertical"
+        android:padding="@dimen/_5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_30sp"
+            android:textColor="@color/white"
+            android:padding="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@string/dvir"/>
+
+
+
+    </RelativeLayout>
+<ScrollView
+    android:layout_below="@+id/vehicle_selection_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_below="@+id/vehicle_selection_layout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/driver_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_black_bg"
+                android:paddingStart="@dimen/_15dp"
+                android:paddingTop="@dimen/_5dp"
+                android:elevation="@dimen/_15dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/driver"/>
+            <TextView
+                android:id="@+id/driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:layout_toEndOf="@+id/view1"
+                android:textColor="@color/black"
+
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/driver"/>
+
+            <TextView
+                android:id="@+id/time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_black_bg"
+                android:layout_below="@+id/driver_title"
+                android:paddingStart="@dimen/_15dp"
+                android:paddingTop="@dimen/_5dp"
+                android:elevation="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/time"/>
+            <View
+                android:id="@+id/view1"
+                android:layout_width="1dp"
+                android:visibility="invisible"
+                android:background="@color/black"
+                android:layout_toEndOf="@+id/time_title"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:id="@+id/time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15dp"
+                android:paddingTop="@dimen/_5dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:layout_toEndOf="@+id/view1"
+                android:textColor="@color/black"
+                android:layout_below="@+id/driver_title"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="Time"/>
+            <TextView
+                android:id="@+id/date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_black_bg"
+                android:layout_below="@+id/time_tv"
+                android:paddingStart="@dimen/_15dp"
+                android:paddingTop="@dimen/_5dp"
+                android:elevation="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/date"/>
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_tv"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_toEndOf="@+id/view1"
+                android:layout_marginTop="@dimen/_15dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/date"/>
+            <TextView
+                android:id="@+id/location_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_black_bg"
+                android:layout_below="@+id/date_title"
+                android:paddingStart="@dimen/_15dp"
+                android:paddingTop="@dimen/_5dp"
+                android:elevation="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/location"/>
+            <TextView
+                android:id="@+id/location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_title"
+                android:layout_toEndOf="@+id/view1"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:paddingBottom="@dimen/_5dp"
+                android:paddingEnd="@dimen/_15dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_15dp"
+                android:text="@string/location"/>
+
+
+
+
+
+
+        </RelativeLayout>
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/text_truck_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="truck#3"/>
+
+        <TextView
+            android:id="@+id/No_Defect_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_50dp"
+            android:paddingStart="@dimen/_50dp"
+            android:background="@drawable/custom_btn"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="No Defects"/>
+        <TextView
+            android:id="@+id/has_Defect_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_50dp"
+            android:paddingStart="@dimen/_50dp"
+            android:background="@drawable/custom_btn"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Has Defects"/>
+
+        <TextView
+            android:id="@+id/text_trailer_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Trailer #5315"/>
+        <TextView
+            android:id="@+id/No_Defect_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_50dp"
+            android:paddingStart="@dimen/_50dp"
+            android:background="@drawable/custom_btn"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="No Defects"/>
+        <TextView
+            android:id="@+id/has_Defect_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_50dp"
+            android:paddingStart="@dimen/_50dp"
+            android:background="@drawable/custom_btn"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Has Defects"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/note_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="Notes"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5dp"
+                android:layout_toEndOf="@+id/note_txt"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:layout_marginStart="@dimen/_15dp"
+                android:paddingBottom="@dimen/_30dp"
+
+                android:paddingEnd="@dimen/_30dp"
+                android:paddingStart="@dimen/_30dp"
+                android:background="@drawable/rectangle_black_bg"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/vehicle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:gravity="center"
+           android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_40dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Vehicle Condition"/>
+        <TextView
+            android:id="@+id/satisfactory_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_10dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10dp"
+            android:background="@drawable/reactangle_green_bg"
+
+            android:textSize="@dimen/_15sp"
+            android:text="Satisfactory"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/sign_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Please Sign In"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_50dp"
+            android:paddingStart="@dimen/_50dp"
+            android:background="@drawable/custom_btn"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Submit"/>
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingEnd="@dimen/_50dp"
+            android:paddingStart="@dimen/_50dp"
+            android:background="@drawable/custom_btn"
+            android:layout_marginTop="@dimen/_15dp"
+            android:textSize="@dimen/_15sp"
+            android:text="Cancel"/>
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+</RelativeLayout>

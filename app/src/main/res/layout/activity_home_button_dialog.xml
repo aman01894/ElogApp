@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ui.home.HomeButtonDialogActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Blue_700">
+
+                <ImageView
+                    android:id="@+id/close_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/_5dp"
+                    android:src="@drawable/ic_close_btn" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Test"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/et_current_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20dp"
+                android:gravity="center"
+                android:hint="Current Location"
+                android:textSize="12sp" android:maxLength="50" android:maxLines="1"/>
+
+            <EditText
+                android:id="@+id/et_current_odometer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20dp"
+                android:gravity="center" android:digits="0123456789"
+                android:hint="Current Odometer" android:inputType="numberSigned"
+                android:textSize="12sp" android:maxLength="10"/>
+
+            <EditText
+                android:id="@+id/et_custom_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20dp"
+                android:gravity="center"
+                android:hint="Enter Custom Location"
+                android:textSize="12sp" android:maxLength="50" android:maxLines="1"/>
+
+            <LinearLayout
+                android:id="@+id/split_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:text="Split Sleep" />
+
+                <RadioGroup
+                    android:id="@+id/split_sleep_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingEnd="@dimen/_10dp"
+                    android:paddingTop="@dimen/_10dp"
+                    android:paddingBottom="@dimen/_10dp"
+                    android:background="@drawable/rectangle_but_bg"
+                    android:orientation="horizontal"
+                    android:textColor="@color/black">
+
+                    <RadioButton android:id="@+id/split_7_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_10dp"
+                        android:text="7 - 3" />
+
+                    <RadioButton android:id="@+id/split_8_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:paddingStart="@dimen/_10dp"
+                        android:text="8 - 2" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:text="Please select which split you would like to use"
+                    android:textSize="@dimen/_10sp" />
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/et_notes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100dp"
+                android:layout_margin="@dimen/_20dp"
+                android:background="@drawable/rectangle_but_bg"
+                android:gravity="left"
+                android:padding="@dimen/_10dp"
+                android:layout_gravity="center"
+                android:hint="Enter Notes"
+                android:textSize="12sp" android:maxLength="180"/>
+
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/_20dp"
+                android:background="@color/Blue_700"
+                android:text="Submit"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

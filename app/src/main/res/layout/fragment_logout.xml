@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/md_transparent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/rect_btn">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_10dp"
+                android:text="Logout"
+                android:textColor="@color/Blue_700"
+                android:textSize="@dimen/_20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="Your Current Status is :"
+                android:textColor="@color/BlackText"
+                android:textSize="@dimen/_15sp" />
+
+            <TextView
+                android:id="@+id/status_txt_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_toEndOf="@+id/status_txt"
+                android:text="On-Duty"
+                android:textColor="@color/Blue_700"
+                android:textSize="@dimen/_15sp" />
+
+            <TextView
+                android:id="@+id/go_off_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/status_txt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="Go off-Duty before log-out"
+                android:textColor="@color/BlackText"
+                android:textSize="@dimen/_15sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/status_txt"
+                android:layout_alignBaseline="@+id/go_off_txt"
+
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_toEndOf="@+id/go_off_txt" />
+
+            <TextView
+                android:id="@+id/auto_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/go_off_txt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="Automatic login on next app Start"
+                android:textColor="@color/BlackText"
+                android:textSize="@dimen/_15sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/go_off_txt"
+                android:layout_alignBaseline="@+id/auto_txt"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_toEndOf="@+id/auto_txt" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logoutBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/auto_txt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:gravity="center"
+                android:padding="@dimen/_5dp"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

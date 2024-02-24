@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/skyBlue"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp"
+    app:cardMaxElevation="6dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:id="@+id/llLoadName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/load_text_view_style"
+                android:layout_height="match_parent"
+                android:text="EVENT: " />
+
+            <TextView
+                android:id="@+id/event_name"
+                style="@style/load_text_view_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                style="@style/load_text_view_style"
+                android:text="Time:" />
+
+            <TextView
+                android:id="@+id/eventTime"
+                style="@style/load_text_view_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llLoadName"
+            android:layout_marginTop="3dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/_5dp">
+
+                <TextView
+                    android:id="@+id/odometer"
+                    style="@style/load_text_view_style"
+                    android:text="Odometer: "
+                    android:textColor="@color/BlackText" />
+
+                <TextView
+                    android:id="@+id/odometerValue"
+                    style="@style/load_text_view_style"
+                    android:layout_marginStart="@dimen/_30dp"
+                    android:layout_toEndOf="@+id/odometer"
+                    android:text="444"
+                    android:textColor="@color/BlackText" />
+
+
+                <TextView
+                    android:id="@+id/engineHour"
+                    style="@style/load_text_view_style"
+                    android:layout_below="@+id/odometerValue"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:text="Engine Hours: "
+                    android:textColor="@color/BlackText" />
+
+                <TextView
+                    android:id="@+id/engineHoursValue"
+                    style="@style/load_text_view_style"
+                    android:layout_below="@+id/odometerValue"
+                    android:layout_alignStart="@+id/odometerValue"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:layout_toEndOf="@+id/engineHour"
+                    android:text="10:00"
+                    android:textColor="@color/BlackText" />
+
+                <TextView
+                    android:id="@+id/source"
+                    style="@style/load_text_view_style"
+                    android:layout_below="@+id/engineHour"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:text="Source:"
+                    android:textColor="@color/BlackText" />
+
+                <TextView
+                    android:id="@+id/sourceValue"
+                    style="@style/load_text_view_style"
+                    android:layout_below="@+id/engineHoursValue"
+                    android:layout_alignStart="@+id/odometerValue"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:layout_toEndOf="@+id/engineHour"
+                    android:text="Driver"
+                    android:textColor="@color/BlackText" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lay_drop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/load_text_view_style"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="@dimen/_5dp"
+                android:text="Location"
+                android:textColor="@color/BlackText" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

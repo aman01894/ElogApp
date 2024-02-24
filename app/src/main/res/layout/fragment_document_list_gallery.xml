@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.elogapp.activity.ui.document.DocGalleryFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.ui.document.DocGlleryFragment">
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:id="@+id/rel_Headerlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/_5dp"
+            android:background="@color/Blue_700"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10dp"
+                android:text="@string/pending"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_30sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/doc_gallery_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layBottom"
+            android:layout_below="@+id/rel_Headerlayout"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".DocumentItemGalleryFrament"
+            tools:listitem="@layout/fragment_document_list_gallery_item" />
+
+
+        <LinearLayout
+            android:id="@+id/layBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp">
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/ic_add" />
+
+
+            <Button
+                android:id="@+id/finish"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rect_bg_blue"
+                android:text="@string/back" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

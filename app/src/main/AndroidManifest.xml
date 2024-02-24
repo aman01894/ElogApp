@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.elogapp">
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-feature android:name="android.hardware.location.gps" /> <!-- bibo01 : hardware option -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" /> <!-- camera permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- BLUETOOTH PERMISSION -->
+    <!-- Request legacy Bluetooth permissions on older devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--
+ Needed only if your app looks for Bluetooth devices.
+             If your app doesn't use Bluetooth scan results to derive physical
+             location information, you can strongly assert that your app
+             doesn't derive physical location.
+    -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!--
+ Needed only if your app makes the device discoverable to Bluetooth
+      devices.
+    -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <!--
+ Needed only if your app communicates with already-paired Bluetooth
+           devices.
+    -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ElogApp"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="com.example.elogapp.activity.TestingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.auth.ReAuthPopupActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/AppDialogTheme" />
+        <activity
+            android:name=".activity.ui.dalily_log.SignatureActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="io.sentry.dsn"
+            android:value="https://2690b7f3a8e948e89b73113edd01f2cd@o929553.ingest.sentry.io/5878329" />
+
+        <activity android:name=".activity.ui.dvir.NewDvir" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ElogApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ui.home.MacInputDialogActivity"
+            android:theme="@style/AppDialogTheme" />
+        <activity
+            android:name=".activity.ui.home.HomeButtonDialogActivity"
+            android:theme="@style/AppDialogTheme" />
+        <activity
+            android:name=".activity.ui.recap.RecapDialogueActivity"
+            android:theme="@style/AppDialogTheme" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/usb_device_filter" />
+        </activity>
+        <activity android:name=".activity.auth.LoginActivity" /> <!-- <activity -->
+        <!-- android:name="com.example.devicemanager.TrackerManagerActivity" -->
+        <!-- android:exported="true" -->
+        <!-- android:label="@string/title_activity_tracker_manager" -->
+        <!-- android:launchMode="singleTask"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" /> -->
+        <!-- </intent-filter> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" -->
+        <!-- android:resource="@xml/usb_device_filter" /> -->
+        <!-- </activity> -->
+        <service
+            android:name="com.example.devicemanager.TrackerService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".util.bg.MyReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".util.bg.MyBgService"
+            android:enabled="true"
+            android:exported="true" /> <!-- <service -->
+        <!-- android:name=".util.OutboundService" -->
+        <!-- > -->
+        <!-- </service> -->
+        <!-- android:process=":MyOutboundDataService" -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a4b960c5994fe0f44b4405bff90e204fd7c2d4ca" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="companyInfoViewModel"
+            type="com.example.elogapp.activity.ui.company_info.CompanyViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_10dp"
+        tools:context=".activity.ui.company_info.CompanyInfoFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dp"
+            tools:context=".activity.ui.company_info.CompanyInfoFragment">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/align"
+                android:layout_width="@dimen/_2dp"
+                android:layout_height="@dimen/_2dp"
+                android:layout_centerInParent="true"
+                android:background="@color/Blue_700"
+                android:visibility="invisible" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/companyLogoLayout"
+                android:layout_width="@dimen/_100dp"
+                android:layout_height="@dimen/_100dp"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="50dp"
+                app:strokeColor="@color/Blue_700"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/company_logo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_company_default_logo" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/driverNameTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/companyLogoLayout"
+                android:text="Driver Name" />
+
+            <TextView
+                android:id="@+id/driverName"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/companyLogoLayout"
+                android:text="" />
+
+
+            <TextView
+                android:id="@+id/driverEmailTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/driverNameTitle"
+                android:text="Driver Email" />
+
+            <TextView
+                android:id="@+id/driverEmail"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/driverNameTitle"
+                android:text="-" />
+
+
+            <TextView
+                android:id="@+id/driverPhoneTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/driverEmailTitle"
+                android:text="Driver Phone" />
+
+            <TextView
+                android:id="@+id/driverPhone"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/driverEmailTitle"
+                android:text="-" />
+
+
+            <TextView
+                android:id="@+id/driverLicenseTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/driverPhoneTitle"
+                android:text="Driver License" />
+
+            <TextView
+                android:id="@+id/driverLicense"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/driverPhoneTitle"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/driverCompanyNameTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/driverLicenseTitle"
+                android:text="Driver Company Name" />
+
+            <TextView
+                android:id="@+id/driverCompanyName"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/driverLicenseTitle"
+                android:text="-" />
+
+
+            <TextView
+                android:id="@+id/mainOfficeAddressTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/driverCompanyNameTitle"
+                android:text="Main Office Address" />
+
+            <TextView
+                android:id="@+id/mainOfficeAddress"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/driverCompanyNameTitle"
+                android:text="-" />
+
+
+            <TextView
+                android:id="@+id/homeTerminalAddressTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/mainOfficeAddressTitle"
+                android:text="Home Terminal Address" />
+
+            <TextView
+                android:id="@+id/homeTerminalAddress"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/mainOfficeAddressTitle"
+                android:text="-" />
+
+
+            <TextView
+                android:id="@+id/timezoneTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/homeTerminalAddressTitle"
+                android:text="Timezone" />
+
+            <TextView
+                android:id="@+id/timezone"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/homeTerminalAddressTitle"
+                android:text="-" />
+
+
+            <TextView
+                android:id="@+id/languageTitle"
+                style="@style/company_info_text_style_title"
+                android:layout_below="@+id/timezoneTitle"
+                android:text="Language" />
+
+            <TextView
+                android:id="@+id/language"
+                style="@style/company_info_text_style_title_value"
+                android:layout_below="@+id/timezoneTitle"
+                android:text="-" />
+
+
+
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/odometerTitle"-->
+            <!--                style="@style/company_info_text_style_title"-->
+            <!--                android:layout_below="@+id/languageTitle"-->
+            <!--                android:text="Odometer" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/odometer"-->
+            <!--                style="@style/company_info_text_style_title_value"-->
+            <!--                android:layout_below="@+id/languageTitle"-->
+            <!--                android:text="-" />-->
+
+
+
+
+
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/common_button"
+                android:layout_below="@+id/language"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_30dp"
+                android:onClick="@{companyInfoViewModel::onBackPressedBtn}"
+                android:text="@string/back" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

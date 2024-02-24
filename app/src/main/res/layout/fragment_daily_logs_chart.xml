@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.elogapp.activity.ui.dalily_log.DailyLogChartViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager">
+
+
+        <RelativeLayout
+            android:id="@+id/vehicle_selection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:background="@color/Blue_700"
+            android:orientation="vertical"
+            android:padding="@dimen/_5dp">
+
+            <ImageView android:id="@+id/arrowLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back_btn" />
+
+            <ImageView android:id="@+id/arrowRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_back_btn"
+                android:rotation="180" />
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sp" />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/backBtn"
+            android:layout_below="@+id/vehicle_selection_layout">
+
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@color/Blue_700">
+
+
+                <WebView
+                    android:id="@+id/canvas_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/daily_log_recycle"
+                    android:name="com.eld.elog.DailyLogItemFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/canvas_chart"
+                    android:background="@color/white"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:context=".DailyLogItemFragment"
+                    tools:listitem="@layout/fragment_daily_log_item" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:background="@drawable/rectangle_bg"
+            android:text="BACK"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

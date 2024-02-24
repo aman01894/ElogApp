@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/rectangle_bg_recap">
+    <RelativeLayout
+        android:id="@+id/rel_top_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/_5dp"
+            android:src="@drawable/ic_close_btn" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Hours Recap"
+            android:textColor="@color/Blue_700"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Blue_700"
+        android:padding="@dimen/_15dp"
+        android:layout_below="@+id/rel_top_border">
+
+        <TextView
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_10dp"
+            android:textSize="@dimen/_15sp"
+
+            android:text="@string/date"/>
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sp"
+            android:text="@string/hour"/>
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_recap"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_below="@+id/rel_blue"
+        android:layout_marginBottom="@dimen/_10dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".activity.ui.recap.RecapDialogueActivity"
+        tools:listitem="@layout/recapdialoglistitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycle_recap"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:background="@color/Blue_700"
+        android:text="@string/exit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sp" />
+
+</RelativeLayout>
